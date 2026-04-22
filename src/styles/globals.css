@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+/* Class-based dark mode (Mosaic-style dashboard) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Primary accent — indigo (Mosaic / Cruip default family), not green */
+  --color-brand-50: #eef2ff;
+  --color-brand-100: #e0e7ff;
+  --color-brand-200: #c7d2fe;
+  --color-brand-300: #a5b4fc;
+  --color-brand-400: #818cf8;
+  --color-brand-500: #6366f1;
+  --color-brand-600: #4f46e5;
+  --color-brand-700: #4338ca;
+  --color-brand-800: #3730a3;
+  --color-brand-900: #312e81;
+
+  --color-surface: #ffffff;
+  --color-surface-secondary: #f8fafc;
+  --color-surface-tertiary: #f1f5f9;
+  --color-border: #e2e8f0;
+  --color-border-light: #f1f5f9;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-tertiary: #94a3b8;
+
+  /* Sidebar: slate shell + indigo active (template default feel) */
+  --color-sidebar: #0f172a;
+  --color-sidebar-hover: #1e293b;
+  --color-sidebar-active: #4f46e5;
+  --color-sidebar-text: #cbd5e1;
+  --color-sidebar-text-active: #ffffff;
+
+  /* Marketing (Radix accordion) — must exist in light and dark; section uses its own colors */
+  --animate-marketing-accordion-down: marketing-accordion-down 0.2s ease-out;
+  --animate-marketing-accordion-up: marketing-accordion-up 0.2s ease-out;
+}
+
+.dark {
+  --color-surface: #0f172a;
+  --color-surface-secondary: #1e293b;
+  --color-surface-tertiary: #334155;
+  --color-border: #334155;
+  --color-border-light: #1e293b;
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-text-tertiary: #94a3b8;
+
+  --color-sidebar: #020617;
+  --color-sidebar-hover: #0f172a;
+  --color-sidebar-active: #4f46e5;
+  --color-sidebar-text: #94a3b8;
+  --color-sidebar-text-active: #ffffff;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-text-primary antialiased;
+  }
+}
+
+@keyframes landing-partners-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-landing-partners-marquee {
+  animation: landing-partners-marquee 28s linear infinite;
+}
+
+.mask-marquee-edges {
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+/* TipTap rich editor */
+.tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: var(--color-text-tertiary);
+  pointer-events: none;
+  height: 0;
+}
+.tiptap {
+  outline: none;
+}
+.tiptap h1 { font-size: 1.5rem; font-weight: 700; margin: 0.75em 0 0.25em; }
+.tiptap h2 { font-size: 1.25rem; font-weight: 600; margin: 0.75em 0 0.25em; }
+.tiptap h3 { font-size: 1.1rem; font-weight: 600; margin: 0.5em 0 0.25em; }
+.tiptap p { margin: 0.4em 0; }
+.tiptap ul { list-style: disc; padding-left: 1.5em; margin: 0.4em 0; }
+.tiptap ol { list-style: decimal; padding-left: 1.5em; margin: 0.4em 0; }
+.tiptap blockquote { border-left: 3px solid var(--color-border); padding-left: 1em; margin: 0.5em 0; color: var(--color-text-secondary); }
+.tiptap a { color: #4f46e5; text-decoration: underline; }
+.tiptap img { max-width: 100%; height: auto; border-radius: 8px; margin: 0.5em 0; }
+.tiptap code { background: var(--color-surface-secondary); padding: 0.15em 0.3em; border-radius: 4px; font-size: 0.9em; }
+
+@keyframes marketing-accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes marketing-accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
