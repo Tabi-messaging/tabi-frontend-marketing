@@ -4,7 +4,6 @@ import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { TabiLogo } from "@/components/branding/tabi-logo";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { SwaggerApiExplorer } from "@/components/developer/swagger-api-explorer";
 import { PublicDocsGuide } from "@/components/marketing/public-docs-guide";
 import { dashboardUrl } from "@/lib/app-urls";
 import { BookOpen, ArrowRight, Lock } from "lucide-react";
@@ -145,11 +144,6 @@ export default function PublicApiDocsPage() {
               </code>{" "}
               when building the web app).
             </p>
-          </div>
-        )}
-        {spec && (
-          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-950">
-            <SwaggerApiExplorer spec={spec} tryItOutEnabled={false} />
           </div>
         )}
       </main>
