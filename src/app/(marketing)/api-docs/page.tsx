@@ -17,7 +17,7 @@ function publicOpenApiUrl(): string {
 }
 
 export default function PublicApiDocsPage() {
-  const [spec, setSpec] = useState<Record<string, unknown> | null>(null);
+  // const [spec, setSpec] = useState<Record<string, unknown> | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const load = useCallback(async () => {
@@ -28,13 +28,13 @@ export default function PublicApiDocsPage() {
       });
       if (!res.ok) {
         setError(await res.text().catch(() => res.statusText));
-        setSpec(null);
+        // setSpec(null);
         return;
       }
-      setSpec((await res.json()) as Record<string, unknown>);
+      // setSpec((await res.json()) as Record<string, unknown>);
     } catch (e) {
       setError(e instanceof Error ? e.message : "Could not load documentation");
-      setSpec(null);
+      // setSpec(null);
     }
   }, []);
 
