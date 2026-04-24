@@ -2,7 +2,8 @@
 
 import { useCallback, useState } from 'react';
 import { Check, Copy } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { cn } from "@/utils/cn";
+
 
 type CodeSampleProps = {
   code: string;

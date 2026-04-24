@@ -4,6 +4,10 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+  --font-mundial: var(--font-mundial);
+
+  --color-primary: #5e4cff;
+
   /* Primary accent — indigo (Mosaic / Cruip default family), not green */
   --color-brand-50: #eef2ff;
   --color-brand-100: #e0e7ff;
@@ -32,9 +36,51 @@
   --color-sidebar-text: #cbd5e1;
   --color-sidebar-text-active: #ffffff;
 
+  /* Feature/Icon backgrounds for WhatsApp Integration */
+  --color-icon-location: #8166ed;
+  --color-icon-menu: #f97316;
+  --color-icon-audio: #ec4899;
+  --color-icon-documents: #eab308;
+  --color-icon-images: #22c55e;
+  --color-icon-videos: #fb7185;
+
+  /* Section backgrounds - Dark purple theme */
+  --color-section-dark-primary: #200f53;
+  --color-section-dark-secondary: #110339;
+  --color-section-dark-tertiary: #1a0d40;
+  --color-section-dark-hover: #251555;
+  --color-section-accordion: #372765;
+
+  /* Section backgrounds - Light theme */
+  --color-section-light-gradient-1: #f3f0ff;
+  --color-section-light-gradient-2: #e8e0ff;
+  --color-section-light-accent: #e0dbff;
+  --color-section-light-salmon: #ffd8d1;
+
+  /* Light UI backgrounds */
+  --color-ui-light-card: #f8f9fb;
+  --color-ui-light-card-hover: #f1f3f7;
+
+  /* Text and interactive colors */
+  --color-text-muted: #666d80;
+  --color-border-light-interactive: #dfe2e6;
+  --color-button-dark: #1a1a1a;
+  --color-button-dark-hover: #333;
+  --color-button-purple-hover: #4e3cef;
+  --color-button-blue: #3b82f6;
+
+  /* Gradient base colors for purple theme */
+  --color-gradient-purple-dark-1: #321978;
+  --color-gradient-purple-dark-2: #5037a2;
+  --color-gradient-overlay: #3c3c3cc9;
+
   /* Marketing (Radix accordion) — must exist in light and dark; section uses its own colors */
   --animate-marketing-accordion-down: marketing-accordion-down 0.2s ease-out;
   --animate-marketing-accordion-up: marketing-accordion-up 0.2s ease-out;
+}
+
+:root {
+  --font-mundial: "Mundial Narrow", sans-serif;
 }
 
 .dark {
@@ -74,8 +120,20 @@
 }
 
 .mask-marquee-edges {
-  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
 }
 
 /* TipTap rich editor */
@@ -89,16 +147,56 @@
 .tiptap {
   outline: none;
 }
-.tiptap h1 { font-size: 1.5rem; font-weight: 700; margin: 0.75em 0 0.25em; }
-.tiptap h2 { font-size: 1.25rem; font-weight: 600; margin: 0.75em 0 0.25em; }
-.tiptap h3 { font-size: 1.1rem; font-weight: 600; margin: 0.5em 0 0.25em; }
-.tiptap p { margin: 0.4em 0; }
-.tiptap ul { list-style: disc; padding-left: 1.5em; margin: 0.4em 0; }
-.tiptap ol { list-style: decimal; padding-left: 1.5em; margin: 0.4em 0; }
-.tiptap blockquote { border-left: 3px solid var(--color-border); padding-left: 1em; margin: 0.5em 0; color: var(--color-text-secondary); }
-.tiptap a { color: #4f46e5; text-decoration: underline; }
-.tiptap img { max-width: 100%; height: auto; border-radius: 8px; margin: 0.5em 0; }
-.tiptap code { background: var(--color-surface-secondary); padding: 0.15em 0.3em; border-radius: 4px; font-size: 0.9em; }
+.tiptap h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0.75em 0 0.25em;
+}
+.tiptap h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0.75em 0 0.25em;
+}
+.tiptap h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.5em 0 0.25em;
+}
+.tiptap p {
+  margin: 0.4em 0;
+}
+.tiptap ul {
+  list-style: disc;
+  padding-left: 1.5em;
+  margin: 0.4em 0;
+}
+.tiptap ol {
+  list-style: decimal;
+  padding-left: 1.5em;
+  margin: 0.4em 0;
+}
+.tiptap blockquote {
+  border-left: 3px solid var(--color-border);
+  padding-left: 1em;
+  margin: 0.5em 0;
+  color: var(--color-text-secondary);
+}
+.tiptap a {
+  color: var(--color-brand-600);
+  text-decoration: underline;
+}
+.tiptap img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 0.5em 0;
+}
+.tiptap code {
+  background: var(--color-surface-secondary);
+  padding: 0.15em 0.3em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
 
 @keyframes marketing-accordion-down {
   from {

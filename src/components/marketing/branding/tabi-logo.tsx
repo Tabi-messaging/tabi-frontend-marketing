@@ -1,25 +1,29 @@
-import { cn } from '@/lib/utils';
+import { cn } from "@/utils/cn";
 
 type TabiLogoProps = {
   className?: string;
   /** Brand purple on light backgrounds */
-  variant?: 'brand' | 'onDark';
+  variant?: "brand" | "onDark";
   title?: string;
 };
 
 /**
  * Official Tabi wordmark (from `images/tabi logo svg.svg`). Uses `currentColor` for theming.
  */
-export function TabiLogo({ className, variant = 'brand', title = 'Tabi' }: TabiLogoProps) {
+export function TabiLogo({
+  className,
+  variant = "brand",
+  title = "Tabi",
+}: TabiLogoProps) {
   return (
     <svg
       viewBox="0 0 79 28"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={cn(
-        'h-7 w-auto shrink-0',
-        variant === 'brand' && 'text-[#4E46E5]',
-        variant === 'onDark' && 'text-white',
+        "h-7 w-auto shrink-0",
+        variant === "brand" && "text-[#4E46E5]",
+        variant === "onDark" && "text-white",
         className,
       )}
       aria-label={title}
@@ -41,7 +45,10 @@ export function TabiLogo({ className, variant = 'brand', title = 'Tabi' }: TabiL
         fill="currentColor"
         d="M61.3322 23.5053H58.0954V4.23883H61.7818V12.1252C62.3212 11.5858 62.9463 11.1662 63.657 10.8665C64.3763 10.5582 65.1555 10.4041 65.9947 10.4041C67.1764 10.4041 68.2253 10.6952 69.1415 11.2775C70.0578 11.8512 70.7813 12.6433 71.3122 13.6537C71.8431 14.6556 72.1086 15.7987 72.1086 17.0831C72.1086 18.359 71.8431 19.5021 71.3122 20.5126C70.7813 21.523 70.0578 22.3193 69.1415 22.9016C68.2253 23.4753 67.1764 23.7622 65.9947 23.7622C65.087 23.7622 64.2479 23.5866 63.4772 23.2355C62.7151 22.8759 62.06 22.3835 61.512 21.7585L61.3322 23.5053ZM65.057 20.4612C65.6821 20.4612 66.2387 20.3156 66.7268 20.0245C67.2235 19.7333 67.6131 19.3309 67.8956 18.8171C68.1868 18.3033 68.3323 17.7211 68.3323 17.0703C68.3323 16.4281 68.1868 15.8544 67.8956 15.3491C67.6131 14.8354 67.2235 14.4329 66.7268 14.1418C66.2387 13.8506 65.6821 13.7051 65.057 13.7051C64.4662 13.7051 63.9267 13.8378 63.4387 14.1033C62.9591 14.3687 62.5738 14.7326 62.2827 15.195C61.9915 15.6574 61.8246 16.1883 61.7818 16.7877V17.3529C61.8246 17.9523 61.9915 18.4874 62.2827 18.9584C62.5738 19.4208 62.9591 19.789 63.4387 20.063C63.9182 20.3285 64.4576 20.4612 65.057 20.4612Z"
       />
-      <path fill="currentColor" d="M78.1711 23.5053H74.4848V10.661H78.1711V23.5053Z" />
+      <path
+        fill="currentColor"
+        d="M78.1711 23.5053H74.4848V10.661H78.1711V23.5053Z"
+      />
       <path
         fill="currentColor"
         d="M76.203 9.11979C75.0493 9.11979 74.1714 8.26701 74.1714 7.11324C74.1714 5.98456 75.0493 5.10669 76.203 5.10669C77.3568 5.10669 78.2597 5.98456 78.2597 7.11324C78.2597 8.26701 77.3568 9.11979 76.203 9.11979Z"

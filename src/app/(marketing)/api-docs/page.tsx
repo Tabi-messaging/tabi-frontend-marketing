@@ -1,17 +1,19 @@
-'use client';
+"use client";
 
-import { useCallback, useEffect, useState } from 'react';
-import Link from 'next/link';
-import { TabiLogo } from '@/components/branding/tabi-logo';
-import { ThemeToggle } from '@/components/theme-toggle';
-import { SwaggerApiExplorer } from '@/components/developer/swagger-api-explorer';
-import { PublicDocsGuide } from '@/components/marketing/public-docs-guide';
-import { dashboardUrl } from '@/lib/app-urls';
-import { BookOpen, ArrowRight, Lock } from 'lucide-react';
+import { useCallback, useEffect, useState } from "react";
+import Link from "next/link";
+import { TabiLogo } from "@/components/branding/tabi-logo";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { SwaggerApiExplorer } from "@/components/developer/swagger-api-explorer";
+import { PublicDocsGuide } from "@/components/marketing/public-docs-guide";
+import { dashboardUrl } from "@/lib/app-urls";
+import { BookOpen, ArrowRight, Lock } from "lucide-react";
 
 function publicOpenApiUrl(): string {
   const base =
-    (typeof process !== 'undefined' && process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, '')) || '';
+    (typeof process !== "undefined" &&
+      process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "")) ||
+    "";
   return `${base}/api/v1/public/openapi`;
 }
 
@@ -23,7 +25,7 @@ export default function PublicApiDocsPage() {
     setError(null);
     try {
       const res = await fetch(publicOpenApiUrl(), {
-        headers: { Accept: 'application/json' },
+        headers: { Accept: "application/json" },
       });
       if (!res.ok) {
         setError(await res.text().catch(() => res.statusText));
@@ -32,7 +34,7 @@ export default function PublicApiDocsPage() {
       }
       setSpec((await res.json()) as Record<string, unknown>);
     } catch (e) {
-      setError(e instanceof Error ? e.message : 'Could not load documentation');
+      setError(e instanceof Error ? e.message : "Could not load documentation");
       setSpec(null);
     }
   }, []);
@@ -45,11 +47,17 @@ export default function PublicApiDocsPage() {
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
       <nav className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-md dark:border-slate-800 dark:bg-slate-950/95">
         <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6">
-          <Link href="/" className="flex items-center text-sm font-semibold text-slate-900 dark:text-white">
-            <TabiLogo className="h-8 w-auto text-[#4E46E5] dark:text-white" />
+          <Link
+            href="/"
+            className="flex items-center text-sm font-semibold text-slate-900 dark:text-white"
+          >
+            <TabiLogo className="h-8 w-auto text-brand-600 dark:text-white" />
           </Link>
           <div className="flex flex-wrap items-center justify-end gap-3 sm:gap-4">
-            <Link href="/developers" className="text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400">
+            <Link
+              href="/developers"
+              className="text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400"
+            >
               Developers
             </Link>
             <Link
@@ -60,13 +68,13 @@ export default function PublicApiDocsPage() {
             </Link>
             <ThemeToggle />
             <Link
-              href={dashboardUrl('/login')}
+              href={dashboardUrl("/login")}
               className="hidden text-sm text-slate-600 hover:text-slate-900 sm:inline dark:text-slate-400 dark:hover:text-white"
             >
               Sign in
             </Link>
             <Link
-              href={dashboardUrl('/register')}
+              href={dashboardUrl("/register")}
               className="rounded-lg bg-brand-600 px-3 py-2 text-sm font-medium text-white hover:bg-brand-700"
             >
               Start free
@@ -85,13 +93,16 @@ export default function PublicApiDocsPage() {
             API documentation
           </h1>
           <p className="mt-3 max-w-2xl text-base text-slate-600 dark:text-slate-400">
-            Guides, copy-paste examples, and the full <strong>public integration</strong> OpenAPI catalog (same surface as the workspace
-            Developer role). This page is read-only; sign in for <strong>Try it out</strong> and webhook tools. Super admins get the
-            full operator catalog under <strong>Platform API</strong> in the dashboard.
+            Guides, copy-paste examples, and the full{" "}
+            <strong>public integration</strong> OpenAPI catalog (same surface as
+            the workspace Developer role). This page is read-only; sign in for{" "}
+            <strong>Try it out</strong> and webhook tools. Super admins get the
+            full operator catalog under <strong>Platform API</strong> in the
+            dashboard.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
-              href={dashboardUrl('/login')}
+              href={dashboardUrl("/login")}
               className="inline-flex items-center gap-2 rounded-lg bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-700"
             >
               <Lock className="h-4 w-4" />
@@ -111,11 +122,15 @@ export default function PublicApiDocsPage() {
         </div>
 
         <div className="mb-6 border-t border-slate-200 pt-12 dark:border-slate-800">
-          <h2 id="openapi-explorer" className="scroll-mt-24 text-xl font-bold text-slate-900 dark:text-white">
+          <h2
+            id="openapi-explorer"
+            className="scroll-mt-24 text-xl font-bold text-slate-900 dark:text-white"
+          >
             Endpoint reference
           </h2>
           <p className="mt-2 max-w-2xl text-sm text-slate-600 dark:text-slate-400">
-            Generated from the live OpenAPI document — schemas, parameters, and request snippets for every public route.
+            Generated from the live OpenAPI document — schemas, parameters, and
+            request snippets for every public route.
           </p>
         </div>
 
@@ -124,7 +139,11 @@ export default function PublicApiDocsPage() {
             <p className="font-medium">Could not load the API specification.</p>
             <p className="mt-1 opacity-90">{error}</p>
             <p className="mt-2 text-xs">
-              Ensure the API is running and reachable (same host or set <code className="rounded bg-black/10 px-1">NEXT_PUBLIC_API_URL</code> when building the web app).
+              Ensure the API is running and reachable (same host or set{" "}
+              <code className="rounded bg-black/10 px-1">
+                NEXT_PUBLIC_API_URL
+              </code>{" "}
+              when building the web app).
             </p>
           </div>
         )}
@@ -139,8 +158,8 @@ export default function PublicApiDocsPage() {
         <Link href="/" className="hover:text-brand-600">
           ← Back to home
         </Link>
-        {' · '}
-        <Link href={dashboardUrl('/register')} className="hover:text-brand-600">
+        {" · "}
+        <Link href={dashboardUrl("/register")} className="hover:text-brand-600">
           Create account
         </Link>
       </footer>
