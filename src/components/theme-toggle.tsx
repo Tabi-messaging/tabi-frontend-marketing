@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Moon, Sun, Monitor } from 'lucide-react';
-import { useTheme } from '@/components/theme-provider';
-import { cn } from '@/lib/utils';
+import { Moon, Sun, Monitor } from "lucide-react";
+import { useTheme } from "@/components/theme-provider";
+import { cn } from "@/utils/cn";
 
 export function ThemeToggle({ className }: { className?: string }) {
   const { theme, setTheme } = useTheme();
@@ -10,7 +10,7 @@ export function ThemeToggle({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        'inline-flex rounded-lg border border-border bg-surface-secondary p-0.5',
+        "inline-flex rounded-lg border border-border bg-surface-secondary p-0.5",
         className,
       )}
       role="group"
@@ -18,12 +18,12 @@ export function ThemeToggle({ className }: { className?: string }) {
     >
       <button
         type="button"
-        onClick={() => setTheme('light')}
+        onClick={() => setTheme("light")}
         className={cn(
-          'rounded-md p-1.5 transition-colors',
-          theme === 'light'
-            ? 'bg-surface text-text-primary shadow-sm'
-            : 'text-text-tertiary hover:text-text-secondary',
+          "rounded-md p-1.5 transition-colors",
+          theme === "light"
+            ? "bg-surface text-text-primary shadow-sm"
+            : "text-text-tertiary hover:text-text-secondary",
         )}
         title="Light"
       >
@@ -31,12 +31,12 @@ export function ThemeToggle({ className }: { className?: string }) {
       </button>
       <button
         type="button"
-        onClick={() => setTheme('system')}
+        onClick={() => setTheme("system")}
         className={cn(
-          'rounded-md p-1.5 transition-colors',
-          theme === 'system'
-            ? 'bg-surface text-text-primary shadow-sm'
-            : 'text-text-tertiary hover:text-text-secondary',
+          "rounded-md p-1.5 transition-colors",
+          theme === "system"
+            ? "bg-surface text-text-primary shadow-sm"
+            : "text-text-tertiary hover:text-text-secondary",
         )}
         title="System"
       >
@@ -44,12 +44,12 @@ export function ThemeToggle({ className }: { className?: string }) {
       </button>
       <button
         type="button"
-        onClick={() => setTheme('dark')}
+        onClick={() => setTheme("dark")}
         className={cn(
-          'rounded-md p-1.5 transition-colors',
-          theme === 'dark'
-            ? 'bg-surface text-text-primary shadow-sm'
-            : 'text-text-tertiary hover:text-text-secondary',
+          "rounded-md p-1.5 transition-colors",
+          theme === "dark"
+            ? "bg-surface text-text-primary shadow-sm"
+            : "text-text-tertiary hover:text-text-secondary",
         )}
         title="Dark"
       >
