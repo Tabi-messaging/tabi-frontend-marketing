@@ -13,7 +13,7 @@ export function PricingSection() {
 
   return (
     <>
-      <div className="mx-auto flex max-w-7xl flex-col items-center px-4 pb-6 pt-14 text-center sm:px-[45px]">
+      <div className="mx-auto flex max-w-7xl flex-col items-center px-4 pb-6 pt-14 text-center sm:px-11.25">
         <h2 className="flex flex-wrap items-baseline justify-center gap-x-2 gap-y-1 text-4xl font-semibold tracking-normal text-black sm:text-5xl">
           Most flexible pricing ever
         </h2>

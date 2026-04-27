@@ -80,8 +80,8 @@ export function WhatsAppApi(): React.JSX.Element {
                 className={cn(
                   "relative h-105 shrink-0 cursor-pointer overflow-hidden rounded-2xl transition-all duration-500 ease-in-out",
                   expanded
-                    ? "w-75 md:w-120 bg-[var(--color-section-light-accent)]"
-                    : "w-35 md:w-45 bg-[var(--color-ui-light-card)]",
+                    ? "w-75 md:w-120 bg-section-light-accent"
+                    : "w-35 md:w-45 bg-ui-light-card",
                 )}
               >
                 {expanded ? (

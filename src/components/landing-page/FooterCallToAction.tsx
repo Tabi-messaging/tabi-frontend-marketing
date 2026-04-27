@@ -28,19 +28,19 @@ const techStack = [
 export default function FooterCallToAction(): React.JSX.Element {
   return (
     <section className="  py-10 bg-section-dark-secondary">
-      <div className="flex w-full items-center mx-auto max-w-7xl overflow-hidden rounded-[18px] border border-white/20 relative bg-white/10 backdrop-blur-xl sm:rounded-[2.5rem] sm:p-4 px-4 py-8 shadow-[0_12px_40px_rgba(17,3,57,0.35),inset_0_1px_0_rgba(255,255,255,0.12)] sm:px-8 sm:py-10 md:px-[35px] md:py-[38px]">
+      <div className="flex w-full items-center mx-auto max-w-7xl overflow-hidden rounded-[18px] border border-white/20 relative bg-white/10 backdrop-blur-xl sm:rounded-[2.5rem] sm:p-4 px-4 py-8 shadow-[0_12px_40px_rgba(17,3,57,0.35),inset_0_1px_0_rgba(255,255,255,0.12)] sm:px-8 sm:py-10 md:px-8.75 md:py-9.5">
         <div className="flex w-full min-w-0 flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
           {/* Left column — compact heading + step pills */}
-          <div className="flex w-full min-w-0 shrink-0 flex-col items-start gap-4 lg:w-[260px]">
+          <div className="flex w-full min-w-0 shrink-0 flex-col items-start gap-4 lg:w-65">
             <h2 className="m-0 max-w-full text-3xl font-semibold leading-[1.1] tracking-normal text-white sm:text-4xl md:text-[42px] md:leading-[1.08] ">
               Get Started <br />
               in Minutes
             </h2>
-            <div className="flex w-full flex-col items-start gap-[11px]">
+            <div className="flex w-full flex-col items-start gap-2.75">
               {steps.map((step, index) => (
                 <div
                   key={index}
-                  className="flex h-[37px] w-full items-center overflow-hidden rounded-[10px] bg-[#3d2d6e]/85 px-2.5 backdrop-blur-sm"
+                  className="flex h-9.25 w-full items-center overflow-hidden rounded-[10px] bg-[#3d2d6e]/85 px-2.5 backdrop-blur-sm"
                 >
                   <div className="flex items-center gap-2">
                     <div className="flex items-center justify-center rounded-full text-white text-xs bg-white/10">
@@ -76,13 +76,13 @@ export default function FooterCallToAction(): React.JSX.Element {
           </div>
 
           {/* Right column */}
-          <div className="flex w-full min-w-0 shrink-0 flex-col items-start gap-[18px] lg:w-[280px]">
-            <p className="m-0 max-w-full self-stretch text-xl font-medium leading-snug tracking-normal text-white sm:text-2xl sm:leading-8 md:text-[28px] md:leading-[36px]">
+          <div className="flex w-full min-w-0 shrink-0 flex-col items-start gap-4.5 lg:w-70">
+            <p className="m-0 max-w-full self-stretch text-xl font-medium leading-snug tracking-normal text-white sm:text-2xl sm:leading-8 md:text-[28px] md:leading-9">
               No Moderation <br />
               Required Use any WhatsApp Number
             </p>
             <Button
-              className="h-auto whitespace-nowrap rounded-[36px] bg-white px-10 py-[15px] text-base font-semibold leading-normal tracking-normal text-black hover:bg-white/90"
+              className="h-auto whitespace-nowrap rounded-[36px] bg-white px-10 py-3.75 text-base font-semibold leading-normal tracking-normal text-black hover:bg-white/90"
               variant="ghost"
               asChild
             >

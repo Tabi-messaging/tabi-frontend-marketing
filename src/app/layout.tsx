@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { ThemeProvider } from "@/components/theme-provider";
 import { APP_DISPLAY_NAME, APP_TAGLINE } from "@/lib/branding";
 
 import localFont from "next/font/local";
 
 import "@/styles/globals.css";
 
- const mundialNarrowFont = localFont({
+const mundialNarrowFont = localFont({
   src: [
     {
       path: "../../public/fonts/mundial-narrow-font-family/MundialNarrow-Thin-BF67624ba5ab00e.otf",
@@ -65,9 +64,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`min-h-screen text-black ${mundialNarrowFont.variable} font-mundial`}
+        className={`text-black ${mundialNarrowFont.variable} font-mundial`}
       >
-        <ThemeProvider>{children}</ThemeProvider>
+        {children}
       </body>
     </html>
   );

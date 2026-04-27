@@ -19,7 +19,6 @@ export default function LandingPage() {
   return (
     <div className="bg-white">
       <div className=" mx-auto max-w-8xl">
-        {" "}
         <NavBar />
         <MarketingHero />
         <MarketingSectors />

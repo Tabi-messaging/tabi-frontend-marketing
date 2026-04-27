@@ -1,6 +1,6 @@
 import { APP_DISPLAY_NAME } from "@/lib/branding";
-import React from "react";
 import { TabiGlassLogoMark } from "../marketing/branding/tabi-glass-logo";
+import Image from "next/image";
 
 const footerColumns = [
   { title: "PRODUCT", links: ["Developers", "SDKs", "Business"] },
@@ -34,7 +34,7 @@ const SOCIAL_LINKS = [
 
 function Footer() {
   return (
-    <footer className="relative z-10 w-full bg-section-dark-secondary px-4 pb-10 pt-20 sm:px-[45px]">
+    <footer className="relative z-10 w-full bg-section-dark-secondary px-4 pb-10 pt-20 sm:px-11.25">
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 flex w-full flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           <nav
@@ -50,18 +50,18 @@ function Footer() {
                 aria-label={s.label}
                 className="opacity-90 transition-opacity hover:opacity-100"
               >
-                <img
+                <Image
                   src={s.icon}
                   alt=""
                   width={22}
                   height={22}
-                  className="h-[22px] w-[22px]"
+                  className="h-5.5 w-5.5"
                   aria-hidden
                 />
               </a>
             ))}
           </nav>
-          <div className="flex flex-wrap items-start gap-12 sm:gap-[120px] sm:justify-end">
+          <div className="flex flex-wrap items-start gap-12 sm:gap-30 sm:justify-end">
             {footerColumns.map((col) => (
               <div key={col.title} className="flex flex-col gap-[20.4px]">
                 <div className="flex flex-col gap-[8.1px]">

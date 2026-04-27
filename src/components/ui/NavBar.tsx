@@ -45,7 +45,7 @@ export default function NavBar() {
           </Button>
 
           <Button
-            className="hidden md:block rounded-full bg-primary px-5 py-2 text-base font-medium text-white hover:bg-[#4e3cef]"
+            className="hidden md:block rounded-full bg-primary px-5 py-2 text-base font-medium text-white hover:bg-button-purple-hover"
             asChild
           >
             <Link href={dashboardUrl("/register")} prefetch={false}>
@@ -99,7 +99,7 @@ export default function NavBar() {
           {/* Action Buttons */}
           <div className="flex flex-col gap-4 pb-10 w-full max-w-sm mx-auto">
             <Button
-              className="w-full h-14 rounded-full bg-[#5e4cff] text-lg font-semibold text-white hover:bg-[#4e3cef]"
+              className="w-full h-14 rounded-full bg-primary text-lg font-semibold text-white hover:bg-button-purple-hover"
               asChild
             >
               <Link href={dashboardUrl("/register")}>Start for free</Link>
