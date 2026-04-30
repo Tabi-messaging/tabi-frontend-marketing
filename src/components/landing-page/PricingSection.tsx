@@ -12,7 +12,27 @@ export function PricingSection() {
   );
 
   return (
-    <>
+    <section
+      id="pricing"
+      className="relative overflow-hidden"
+      // style={{
+      //   background: `
+      //     linear-gradient(
+      //       to bottom,
+      //       #ffffff 0%,
+      //       #faf7ff 25%,
+      //       #f3ecff 45%,
+      //       #e9d5ff 60%,
+      //       #d8b4fe 75%,
+      //       #7c3aed 85%,
+      //       #110339 100%
+      //     ),
+      //     radial-gradient(circle at 30% 75%, rgba(255, 182, 193, 0.25), transparent 60%),
+      //     radial-gradient(circle at 70% 80%, rgba(196, 181, 253, 0.3), transparent 65%),
+      //     radial-gradient(circle at 70% 80%, #110339, transparent 65%)
+      //     `,
+      // }}
+    >
       <div className="mx-auto flex max-w-7xl flex-col items-center px-4 pb-6 pt-14 text-center sm:px-11.25">
         <h2 className="flex flex-wrap items-baseline justify-center gap-x-2 gap-y-1 text-4xl font-semibold tracking-normal text-black sm:text-5xl">
           Most flexible pricing ever
@@ -64,6 +84,6 @@ export function PricingSection() {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 }
