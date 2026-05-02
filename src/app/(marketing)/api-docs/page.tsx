@@ -4,7 +4,6 @@ import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { TabiLogo } from "@/components/branding/tabi-logo";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { SwaggerApiExplorer } from "@/components/developer/swagger-api-explorer";
 import { PublicDocsGuide } from "@/components/marketing/public-docs-guide";
 import { dashboardUrl } from "@/lib/app-urls";
 import { BookOpen, ArrowRight, Lock } from "lucide-react";
@@ -18,7 +17,7 @@ function publicOpenApiUrl(): string {
 }
 
 export default function PublicApiDocsPage() {
-  const [spec, setSpec] = useState<Record<string, unknown> | null>(null);
+  // const [spec, setSpec] = useState<Record<string, unknown> | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const load = useCallback(async () => {
@@ -29,13 +28,13 @@ export default function PublicApiDocsPage() {
       });
       if (!res.ok) {
         setError(await res.text().catch(() => res.statusText));
-        setSpec(null);
+        // setSpec(null);
         return;
       }
-      setSpec((await res.json()) as Record<string, unknown>);
+      // setSpec((await res.json()) as Record<string, unknown>);
     } catch (e) {
       setError(e instanceof Error ? e.message : "Could not load documentation");
-      setSpec(null);
+      // setSpec(null);
     }
   }, []);
 
@@ -145,11 +144,6 @@ export default function PublicApiDocsPage() {
               </code>{" "}
               when building the web app).
             </p>
-          </div>
-        )}
-        {spec && (
-          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-950">
-            <SwaggerApiExplorer spec={spec} tryItOutEnabled={false} />
           </div>
         )}
       </main>

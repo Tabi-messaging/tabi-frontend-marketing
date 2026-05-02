@@ -1,10 +1,9 @@
-import type { NextConfig } from 'next';
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'standalone',
-  transpilePackages: ['swagger-ui-react'],
+  output: "standalone",
   async redirects() {
-    return [{ source: '/sdk', destination: '/sdks', permanent: true }];
+    return [{ source: "/sdk", destination: "/sdks", permanent: true }];
   },
 };
 
