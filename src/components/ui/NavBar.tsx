@@ -3,11 +3,9 @@
 import { useState } from "react";
 import { TabiLogo } from "@/components/branding/tabi-logo";
 import Link from "next/link";
-import { dashboardUrl } from "@/lib/app-urls";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Menu } from "lucide-react";
 import { cn } from "@/utils/cn";
-
 
 const navLinks = [
   { label: "Pricing", hasDropdown: false, href: "#pricing" },
@@ -41,14 +39,14 @@ export default function NavBar() {
             className=" inline-flex h-auto rounded-md px-3.5 py-2 text-base font-medium text-black"
             asChild
           >
-            <Link href={dashboardUrl("/login")}>Login</Link>
+            <Link href={"/login"}>Login</Link>
           </Button>
 
           <Button
             className="hidden md:block rounded-full bg-primary px-5 py-2 text-base font-medium text-white hover:bg-button-purple-hover"
             asChild
           >
-            <Link href={dashboardUrl("/register")} prefetch={false}>
+            <Link href={"/register"} prefetch={false}>
               Start for free
             </Link>
           </Button>
@@ -102,7 +100,7 @@ export default function NavBar() {
               className="w-full h-14 rounded-full bg-primary text-lg font-semibold text-white hover:bg-button-purple-hover"
               asChild
             >
-              <Link href={dashboardUrl("/register")}>Start for free</Link>
+              <Link href={"/register"}>Start for free</Link>
             </Button>
 
             <Button
@@ -110,7 +108,7 @@ export default function NavBar() {
               className="w-full h-14 rounded-full border-gray-200 text-lg font-semibold text-black"
               asChild
             >
-              <Link href={dashboardUrl("/login")}>Login</Link>
+              <Link href={"/login"}>Login</Link>
             </Button>
           </div>
         </div>

@@ -5,7 +5,7 @@ import FormInput, { PasswordInput } from "@/components/ui/FormInput";
 import { signUpSchema, SignUpValues } from "@/schemas/AuthSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { CheckCircle2, Circle, XCircle } from "lucide-react"; // Or use your own icons
+import { CheckCircle2, XCircle } from "lucide-react"; 
 import { cn } from "@/utils/cn";
 
 interface IRegisterFormProps {
